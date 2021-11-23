@@ -9,7 +9,7 @@ featureFlags:
         type: boolean
         default:
           onVariation: "true"
-          offVariation: "false"
+          offVariation: "true"
         variations:
         - identifier: "true"
           value: "true"
@@ -29,7 +29,7 @@ featureFlags:
       spec:
         type: boolean
         default:
-          onVariation: "true"
+          onVariation: "false"
           offVariation: "false"
         variations:
         - identifier: "true"
