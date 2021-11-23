@@ -36,7 +36,7 @@ featureFlags:
       spec:
         type: boolean
         default:
-          onVariation: "true"
+          onVariation: "false"
           offVariation: "false"
         variations:
         - identifier: "true"
@@ -53,7 +53,7 @@ featureFlags:
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "off"
+        state: "on"
         rules:
         - priority: 1
           serve:
