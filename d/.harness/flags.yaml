@@ -27,7 +27,7 @@ featureFlags:
         default:
           onVariation: One
           offVariation: Two
-        state: "off"
+        state: "on"
   - flag:
       name: SimpleBool
       identifier: SimpleBool
