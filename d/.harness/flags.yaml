@@ -1,0 +1,75 @@
+featureFlags:
+  flags:
+  - flag:
+      name: MultiVar
+      identifier: MultiVar
+      description: ""
+      permanent: false
+      spec:
+        type: string
+        default:
+          onVariation: One
+          offVariation: Two
+        variations:
+        - identifier: One
+          value: one
+        - identifier: Two
+          value: two
+        - identifier: Three
+          value: three
+      environments:
+      - identifier: default
+        default:
+          onVariation: One
+          offVariation: Two
+        state: "off"
+      - identifier: Dev
+        default:
+          onVariation: One
+          offVariation: Two
+        state: "off"
+  - flag:
+      name: SimpleBool
+      identifier: SimpleBool
+      description: ""
+      permanent: false
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: default
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: Dev
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+        rules:
+        - priority: 1
+          serve:
+            serveVariation: "true"
+          clauses:
+          - attribute: ""
+            op: segmentMatch
+            values:
+            - test
+        - priority: 2
+          serve:
+            serveVariation: "true"
+          clauses:
+          - attribute: name
+            op: starts_with
+            values:
+            - Dave
+  projectIdentifier: davej
+  orgIdentifier: default
