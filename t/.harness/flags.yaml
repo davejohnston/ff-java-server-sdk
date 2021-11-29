@@ -9,7 +9,7 @@ featureFlags:
         type: boolean
         default:
           onVariation: "true"
-          offVariation: "true"
+          offVariation: "false"
         variations:
         - identifier: "true"
           value: "true"
@@ -29,7 +29,7 @@ featureFlags:
       spec:
         type: boolean
         default:
-          onVariation: "false"
+          onVariation: "true"
           offVariation: "false"
         variations:
         - identifier: "true"
@@ -41,6 +41,6 @@ featureFlags:
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "on"
+        state: "off"
   projectIdentifier: demo
   orgIdentifier: default
