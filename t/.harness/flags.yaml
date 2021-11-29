@@ -3,7 +3,7 @@ featureFlags:
   - flag:
       name: SimpleBool
       identifier: SimpleBool
-      description: ""
+      description: "Updating the description for this flag"
       permanent: false
       spec:
         type: boolean
