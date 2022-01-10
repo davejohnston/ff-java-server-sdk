@@ -1,29 +1,8 @@
 featureFlags:
   flags:
   - flag:
-      name: SimpleBool
-      identifier: SimpleBool
-      description: "Updating the description for this flag"
-      permanent: false
-      spec:
-        type: boolean
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        variations:
-        - identifier: "true"
-          value: "true"
-        - identifier: "false"
-          value: "false"
-      environments:
-      - identifier: test
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-  - flag:
-      name: test new flag
-      identifier: test_new_flag
+      name: TestBool
+      identifier: TestBool
       description: ""
       permanent: false
       spec:
@@ -37,10 +16,15 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: test2
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: test
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-  projectIdentifier: demo
+  projectIdentifier: FailoverTesting
   orgIdentifier: default
