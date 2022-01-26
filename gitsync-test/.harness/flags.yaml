@@ -45,6 +45,6 @@ featureFlags:
         default:
           onVariation: Second
           offVariation: Second
-        state: "off"
+        state: "on"
   projectIdentifier: GitSyncDemo
   orgIdentifier: default
