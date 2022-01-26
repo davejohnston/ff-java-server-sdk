@@ -20,7 +20,7 @@ featureFlags:
         default:
           onVariation: "false"
           offVariation: "false"
-        state: "off"
+        state: "on"
       - identifier: Prod2
         default:
           onVariation: "false"
