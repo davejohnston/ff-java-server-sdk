@@ -1,0 +1,43 @@
+pipeline:
+    name: Progressive Delivery
+    identifier: Progressive_Delivery
+    projectIdentifier: GitSyncDemo
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: Flag Delivery
+              identifier: Flag_Delivery
+              description: ""
+              type: FeatureFlag
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: FlagConfiguration
+                                name: Percent25
+                                identifier: Percent25
+                                spec:
+                                    feature: SimpleString
+                                    environment: Prod2
+                                    instructions:
+                                        - identifier: SetFeatureFlagStateIdentifier
+                                          type: SetFeatureFlagState
+                                          spec:
+                                              state: "on"
+                                        - identifier: AddRuleIdentifier
+                                          type: AddRule
+                                          spec:
+                                              priority: 100
+                                              distribution:
+                                                  clauses:
+                                                      - op: segmentMatch
+                                                        attribute: ""
+                                                        values:
+                                                            - TestDiego
+                                                  variations:
+                                                      - variation: First
+                                                        weight: 75
+                                                      - variation: Five
+                                                        weight: 25
+                                timeout: 10m
