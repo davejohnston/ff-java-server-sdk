@@ -60,9 +60,6 @@ featureFlags:
         state: "on"
         targetRules:
         - targetGroups:
-          - identifier: TestGroup
-          variation: Five
-        - targetGroups:
           - identifier: TestDiego
           variation: Third
   projectIdentifier: GitSyncDemo
