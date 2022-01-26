@@ -52,7 +52,7 @@ featureFlags:
         default:
           onVariation: Second
           offVariation: Second
-        state: "off"
+        state: "on"
       - identifier: Prod2
         default:
           onVariation: Second
