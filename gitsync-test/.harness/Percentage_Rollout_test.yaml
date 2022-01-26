@@ -39,8 +39,9 @@ pipeline:
                                                       - variation: First
                                                         weight: 75
                                                       - variation: Second
-                                                        weight: 25
+                                                        weight: null
                                                       - variation: Third
                                                       - variation: Fourth
                                                       - variation: Five
+                                                        weight: 25
                                 timeout: 10m
