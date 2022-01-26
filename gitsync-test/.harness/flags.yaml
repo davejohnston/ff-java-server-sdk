@@ -38,7 +38,7 @@ featureFlags:
           offVariation: Second
         variations:
         - identifier: First
-          value: "1"
+          value: "off"
         - identifier: Second
           value: "2"
         - identifier: Third
