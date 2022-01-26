@@ -34,19 +34,19 @@ featureFlags:
       spec:
         type: string
         default:
-          onVariation: Second
-          offVariation: Second
+          onVariation: First
+          offVariation: First
         variations:
         - identifier: First
           value: "off"
         - identifier: Second
-          value: "2"
+          value: feature2
         - identifier: Third
-          value: "3"
+          value: feature3
         - identifier: Fourth
-          value: "4"
+          value: feature4
         - identifier: Five
-          value: "5"
+          value: feature5
       environments:
       - identifier: Prod1
         default:
