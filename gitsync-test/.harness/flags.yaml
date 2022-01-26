@@ -50,9 +50,5 @@ featureFlags:
           onVariation: Second
           offVariation: Second
         state: "on"
-        targetRules:
-        - targetGroups:
-          - identifier: TestGroup
-          variation: Fourth
   projectIdentifier: GitSyncDemo
   orgIdentifier: default
