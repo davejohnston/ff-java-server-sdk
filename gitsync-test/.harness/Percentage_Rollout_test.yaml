@@ -1,0 +1,46 @@
+pipeline:
+    name: Percentage Rollout test
+    identifier: Percentage_Rollout_test
+    projectIdentifier: GitSyncDemo
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: FirstRollout
+              identifier: FirstRollout
+              description: ""
+              type: FeatureFlag
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: FlagConfiguration
+                                name: TwentyFivePercent
+                                identifier: TwentyFivePercent
+                                spec:
+                                    feature: SimpleString
+                                    environment: Prod2
+                                    instructions:
+                                        - identifier: SetFeatureFlagStateIdentifier
+                                          type: SetFeatureFlagState
+                                          spec:
+                                              state: "on"
+                                        - identifier: AddRuleIdentifier
+                                          type: AddRule
+                                          spec:
+                                              priority: 100
+                                              distribution:
+                                                  clauses:
+                                                      - op: segmentMatch
+                                                        attribute: ""
+                                                        values:
+                                                            - TestGroup
+                                                  variations:
+                                                      - variation: First
+                                                        weight: 75
+                                                      - variation: Second
+                                                        weight: 25
+                                                      - variation: Third
+                                                      - variation: Fourth
+                                                      - variation: Five
+                                timeout: 10m
