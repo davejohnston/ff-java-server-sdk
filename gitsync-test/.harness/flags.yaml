@@ -21,5 +21,30 @@ featureFlags:
           onVariation: "false"
           offVariation: "false"
         state: "on"
+  - flag:
+      name: SimpleString
+      identifier: SimpleString
+      description: ""
+      permanent: false
+      spec:
+        type: string
+        default:
+          onVariation: Second
+          offVariation: Second
+        variations:
+        - identifier: First
+          value: "1"
+        - identifier: Second
+          value: "2"
+        - identifier: Third
+          value: "3"
+        - identifier: Fourth
+          value: "4"
+      environments:
+      - identifier: Prod2
+        default:
+          onVariation: Second
+          offVariation: Second
+        state: "off"
   projectIdentifier: GitSyncDemo
   orgIdentifier: default
