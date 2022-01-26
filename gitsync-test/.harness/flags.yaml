@@ -55,8 +55,8 @@ featureFlags:
         state: "on"
       - identifier: Prod2
         default:
-          onVariation: Second
-          offVariation: Second
+          onVariation: First
+          offVariation: First
         state: "on"
         targetRules:
         - targetGroups:
