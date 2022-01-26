@@ -50,8 +50,8 @@ featureFlags:
       environments:
       - identifier: Prod1
         default:
-          onVariation: Second
-          offVariation: Second
+          onVariation: First
+          offVariation: First
         state: "on"
       - identifier: Prod2
         default:
