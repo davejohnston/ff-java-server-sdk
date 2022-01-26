@@ -62,8 +62,5 @@ featureFlags:
         - targetGroups:
           - identifier: TestGroup
           variation: Five
-        - targetGroups:
-          - identifier: TestDiego
-          variation: Fourth
   projectIdentifier: GitSyncDemo
   orgIdentifier: default
