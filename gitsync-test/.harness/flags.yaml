@@ -21,10 +21,6 @@ featureFlags:
           onVariation: "false"
           offVariation: "false"
         state: "on"
-        targetRules:
-        - targetGroups:
-          - identifier: TestGroup
-          variation: "true"
   - flag:
       name: SimpleString
       identifier: SimpleString
