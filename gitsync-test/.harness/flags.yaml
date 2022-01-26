@@ -16,6 +16,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: Prod1
+        default:
+          onVariation: "false"
+          offVariation: "false"
+        state: "off"
       - identifier: Prod2
         default:
           onVariation: "false"
@@ -41,6 +46,11 @@ featureFlags:
         - identifier: Fourth
           value: "4"
       environments:
+      - identifier: Prod1
+        default:
+          onVariation: Second
+          offVariation: Second
+        state: "off"
       - identifier: Prod2
         default:
           onVariation: Second
