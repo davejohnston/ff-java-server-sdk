@@ -1,0 +1,35 @@
+pipeline:
+    name: test
+    identifier: test
+    allowStageExecutions: false
+    projectIdentifier: TestGitSyncQA
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: test
+              identifier: test
+              description: ""
+              type: FeatureFlag
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: FlagConfiguration
+                                name: teststep
+                                identifier: teststep
+                                spec:
+                                    feature: test
+                                    environment: test
+                                    instructions:
+                                        - identifier: SetFeatureFlagStateIdentifier
+                                          type: SetFeatureFlagState
+                                          spec:
+                                              state: "on"
+                                        - identifier: SetVariationForGroup
+                                          type: AddSegmentToVariationTargetMap
+                                          spec:
+                                              variation: "true"
+                                              segments:
+                                                  - alpha
+                                timeout: 10m
