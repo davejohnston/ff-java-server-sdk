@@ -51,5 +51,13 @@ featureFlags:
             op: segmentMatch
             values:
             - alpha
+        - priority: 1
+          serve:
+            serveVariation: "false"
+          clauses:
+          - attribute: ""
+            op: segmentMatch
+            values:
+            - alpha
   projectIdentifier: TestGitSyncQA
   orgIdentifier: default
