@@ -21,5 +21,14 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+        rules:
+        - priority: 0
+          serve:
+            serveVariation: "false"
+          clauses:
+          - attribute: ""
+            op: segmentMatch
+            values:
+            - alpha
   projectIdentifier: TestGitSyncQA
   orgIdentifier: default
