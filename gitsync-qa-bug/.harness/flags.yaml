@@ -52,9 +52,9 @@ featureFlags:
           offVariation: "false"
         state: "on"
         rules:
-        - priority: 0
+        - priority: 1
           serve:
-            serveVariation: "true"
+            serveVariation: "false"
           clauses:
           - attribute: ""
             op: segmentMatch
