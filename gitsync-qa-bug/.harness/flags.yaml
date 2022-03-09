@@ -21,6 +21,15 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+        rules:
+        - priority: 0
+          serve:
+            serveVariation: "true"
+          clauses:
+          - attribute: ""
+            op: segmentMatch
+            values:
+            - alpha
   - flag:
       name: test
       identifier: test
@@ -46,14 +55,6 @@ featureFlags:
         - priority: 0
           serve:
             serveVariation: "true"
-          clauses:
-          - attribute: ""
-            op: segmentMatch
-            values:
-            - alpha
-        - priority: 1
-          serve:
-            serveVariation: "false"
           clauses:
           - attribute: ""
             op: segmentMatch
