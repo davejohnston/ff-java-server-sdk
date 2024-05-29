@@ -67,7 +67,7 @@ public class Evaluator implements Evaluation {
   static int getNormalizedNumber(@NonNull Object property, @NonNull String bucketBy) {
     byte[] value = String.join(":", bucketBy, property.toString()).getBytes();
     long hasher = Murmur3.hash_x86_32(value, value.length, 0);
-    int result = (int) (hasher % Evaluator.ONE_HUNDRED) + 1;
+    int result = (int) (hasher % ONE_HUNDRED) + 1;
     log.debug("normalized number for {} = {}", new String(value), result);
     return result;
   }
@@ -78,6 +78,8 @@ public class Evaluator implements Evaluation {
       String oldBB = bucketBy;
       bucketBy = "identifier";
       attrValue = getAttrValue(target, bucketBy);
+
+
       if (!attrValue.isPresent()) {
         return false;
       }
