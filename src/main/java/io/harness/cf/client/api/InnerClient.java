@@ -81,7 +81,9 @@ class InnerClient
 
   protected void setUp(@NonNull final Connector connector, @NonNull final BaseConfig options) {
     this.options = options;
-    log.info("Starting SDK client with configuration: {}", this.options);
+    if (log.isInfoEnabled()) {
+      log.info("Starting SDK client with configuration: {}", this.options);
+    }
     this.connector = connector;
     this.connector.setOnUnauthorized(this::onUnauthorized);
 
@@ -93,6 +95,9 @@ class InnerClient
         new PollingProcessor(this.connector, repository, options.getPollIntervalInSeconds(), this);
     metricsProcessor = new MetricsProcessor(this.connector, this.options, this);
     updateProcessor = new UpdateProcessor(this.connector, this.repository, this);
+
+
+
 
     // start with authentication
     authService.start();
