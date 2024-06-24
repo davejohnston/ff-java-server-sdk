@@ -153,7 +153,6 @@ class CfClientTest {
     try (MockWebServer mockSvr = new MockWebServer()) {
       mockSvr.setDispatcher(webserverDispatcher);
       mockSvr.start();
-
       try (CfClient client =
           new CfClient(
               makeConnectorWithMinimalRetryBackOff(mockSvr.getHostName(), mockSvr.getPort()),
