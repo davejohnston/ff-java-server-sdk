@@ -153,7 +153,6 @@ class CfClientTest {
     try (MockWebServer mockSvr = new MockWebServer()) {
       mockSvr.setDispatcher(webserverDispatcher);
       mockSvr.start();
-
       try (CfClient client =
           new CfClient(
               makeConnectorWithMinimalRetryBackOff(mockSvr.getHostName(), mockSvr.getPort()),
@@ -173,6 +172,13 @@ class CfClientTest {
             System.out.printf(
                 "Test that xVariation doesn't block and serves default when auth fails, iteration #%d%n",
                 i);
+          // Add logging for visibility in case of exception
+          try {
+            client.waitForInitialization();
+          } catch (FeatureFlagInitializeException ex) {
+            System.err.println("Feature flag initialization failed: " + ex.getMessage());
+          }
+        }
 
           boolean b1 = client.boolVariation("test", null, true);
           boolean b2 =
