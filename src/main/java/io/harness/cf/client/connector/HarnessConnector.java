@@ -174,7 +174,7 @@ public class HarnessConnector implements Connector, AutoCloseable {
       log.error("Failed to get auth token", apiException);
       throw new ConnectorException(
           apiException.getMessage(), apiException.getCode(), apiException.getMessage());
-    } catch (Throwable ex) {
+    } catch (Exception ex) {
       log.error("Unexpected exception", ex);
       throw ex;
     } finally {
